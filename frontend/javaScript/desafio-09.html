@@ -1,0 +1,37 @@
+<!-- •	Crie uma função que receba uma classe de um input html, capture o valor do input e formate em moeda brasileira R$ e imprima no console caso não seja um valor numérico imprima no console o valor é valido.  -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 09</title>
+</head>
+
+<body>
+    <h1>Desafio 09</h1>
+    <input class="number" type="text" placeholder="Digite um valor" oninput="formataPreco()">
+    <span class="resultado"></span>
+
+    <script>
+        function formataPreco() {
+            const input = document.querySelector(".number");
+            const spanResultado = document.querySelector(".resultado");
+            const valor = input.value;
+
+            if (isNaN(valor) || valor.trim() === "") {
+                  console.log("O valor não é válido.");
+            } else {
+                const valorFormatado = new Intl.NumberFormat("pt-BR", {
+                    style: "currency",
+                    currency: "BRL"
+                }).format(parseFloat(valor));
+
+               console.log("valor valido");
+               spanResultado.textContent = valorFormatado;
+            }
+        }
+    </script>
+</body>
+
+</html>
