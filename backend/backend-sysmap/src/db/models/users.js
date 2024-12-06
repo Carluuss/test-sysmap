@@ -19,11 +19,8 @@ const User = database.define('users', {
    email: {
     type: Sequelize.STRING,
     allowNull: false,
-   },
-   confirm: {
-    type: Sequelize.BOOLEAN,
-    allowNull: false,
    }
+ 
 })
  
 module.exports = User;

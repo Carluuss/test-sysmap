@@ -12,13 +12,13 @@ class UserService {
 
         const to = `${user.email}`
         const subject = "Bem-vindo ao nosso serviço!";
-        const body = `
-          Olá, ${user.name}!
+        const body = 
+        `  Olá, ${user.name}!
           Obrigado por se cadastrar. Estamos felizes em tê-lo conosco!
           Aqui está seu código de confirmação.
           123
-          Equipe Exemplo.
-        `;
+          Equipe Exemplo.`
+        ;
 
        
        const result =  await User.create({ ...user, password });
